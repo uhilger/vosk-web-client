@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="stile.css">
+    <title>Demo: Spracherkennung</title>
+  </head>
+  <body>
+    <h3>Demo: Spracherkennung</h3>
+    <p class="kleiner">
+      Schalten Sie die Spracherkennung ein und sprechen Sie den Text, der 
+      maschinell verarbeitet werden soll.
+    </p>
+    <div class="steuerung">
+      Server: 
+      <input id="url" placeholder="ws://localhost:2700" type="text" value="">&nbsp;
+      <label class="wsinfo"></label>
+      <br/>Spracherkennung: 
+      <input type="radio" id="mic-ein" value="ein" name="mic-radio-grp">
+      <label for="mic-ein">ein</label>
+      <input type="radio" id="mic-aus" value="aus" checked name="mic-radio-grp">
+      <label for="mic-aus">aus</label>			
+    </div>
+    <div class="ergebnis">
+    </div>
+    <p class="kleiner">
+      Diese Seite zeigt die Verwendung der 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">Web Audio API</a> 
+      zum Mitschnitt von Ton über ein Mikrofon und die Verwendung 
+      eines <a href="https://alphacephei.com/vosk/">Vosk</a> Servers 
+      zur maschinellen Erkennung von Sprache.
+    </p>
+    <script src="sp.js"></script>
+  </body>
+</html>
