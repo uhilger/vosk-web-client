@@ -1,6 +1,6 @@
 # Vosk Web Client
 
-Eine Demo der Verwendung eines [Vosk Servers](https://alphacephei.com/vosk/server) im Web Browser.
+Eine Demo der Verwendung eines [Vosk Servers](https://alphacephei.com/vosk/server) aus einem Web Browser heraus.
 
 
 
