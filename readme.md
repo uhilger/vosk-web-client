@@ -22,4 +22,4 @@ Mit Einschalten der Spracherkennung zeigt der Browser einen Dialog, in dem die F
 
 ## Voraussetzungen
 
-Auf der betreffenden Maschine muss Docker installiert sein. 
+Auf der betreffenden Maschine müssen Docker installiert und ein Mikrofon angeschlossen oder eingebaut sein. 
