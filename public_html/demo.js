@@ -1,5 +1,5 @@
 /* 
- * JavaScript code zur Steuerung der Spracherkennungs-Demo
+ * JavaScript Code zur Steuerung der Spracherkennungs-Demo
  * von Ulrich Hilger
  */
 
@@ -94,8 +94,9 @@ function mitschnitt(quelle) {
 
   // ein Recorder-Objekt erzeugen, das auf Toneingang mit dem 
   // Event Handler onaudioprocess reagiert				
-  // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createScriptProcessor
+  
   // pufferGroesse: the onaudioprocess event is called when the buffer is full
+  // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createScriptProcessor
   var pufferGroesse = 2048;
   var anzEinKanaele = 1;
   var anzAusKanaele = 1;
