@@ -27,4 +27,4 @@ Auf der betreffenden Maschine müssen Docker installiert und ein Mikrofon angesc
 
 ## Hinweis
 
-Dieser Webclient ist als [Durchstich](https://de.wikipedia.org/wiki/Prototyping_(Softwareentwicklung)#Vertikales_Prototyping_(Durchstich)) entstanden und in diesem Sinne experimentell. Beispielweise die Aufrufe der Web Audio API können noch in Richtung der Verwendung von Worklets weiterentwickelt werden.
+Dieser Webclient ist als [Durchstich](https://de.wikipedia.org/wiki/Prototyping_(Softwareentwicklung)#Vertikales_Prototyping_(Durchstich)) entstanden und in diesem Sinne experimentell. Bestimmte Aufrufe der Web Audio API können z.B. noch in Richtung neuerer Varianten wie etwa Worklets weiterentwickelt werden.
