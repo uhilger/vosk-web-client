@@ -195,19 +195,23 @@ function steuerung(ton) {
 }
 
 /*
- In dieser Demo wird jeder Sendevorgang ueber eine 
- eigens eroeffnete WebSocket-Verbindung geschickt.
+
+ Der vorkonfigurierte 'dockerisierte' 
+ Vosk-Server antwortet  
+ auf einzelne Teile von Sprache nur mit 'Partial' 
+ Transskriptionen, so lange diese ueber dieselbe 
+ offene Websocket-Verbindung gesendet werden.
  
- Unklar bleibt, ob die WebSocket-Verbindung nicht 
- auch so lange geoeffnet bleiben kann, wie die 
- HTML-Seite geoeffnet ist.
- 
- Das Senden weiterer Inhalte ueber dieselbe 
- WebSocket-Verbindung wird jedenfalls vom 
- Server nicht in derselben Weise verarbeitet 
- wie die erste Sendung und zwar auch dann, wenn 
- nicht webSocket.send('{"eof" : 1}') am Schluss 
- gesendet wird.
+ Das kann geandert werden, wenn mit einer eigenen 
+ und noetigenfalls ebenso containerisierten 
+ Konfiguration der Server-Seite gearbeitet wird. 
+
+ Um den Einsatz des momentan von Vosk erhaeltlichen 
+ dockerisierten Servers zu zeigen wird in dieser 
+ Demo stattdessen jeder Sendevorgang ueber 
+ eine eigens eroeffnete WebSocket-Verbindung 
+ geschickt.
+
  */
 function mitschnittSenden() {
   var url = document.querySelector('#url');
