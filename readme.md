@@ -24,3 +24,7 @@ Mit Einschalten der Spracherkennung zeigt der Browser einen Dialog, in dem die F
 ## Voraussetzungen
 
 Auf der betreffenden Maschine müssen Docker installiert und ein Mikrofon angeschlossen oder eingebaut sein. 
+
+## Hinweis
+
+Dieser Webclient ist als [Durchstich](https://de.wikipedia.org/wiki/Prototyping_(Softwareentwicklung)#Vertikales_Prototyping_(Durchstich)) entstanden und in diesem Sinne experimentell. Beispielweise die Aufrufe der Web Audio API können noch in Richtung der Verwendung von Worklets weiterentwickelt werden.
