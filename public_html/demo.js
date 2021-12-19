@@ -124,7 +124,7 @@ function mitschnitt(quelle) {
   aufnahmegeraet.onaudioprocess = function (quelle) {
     var ton = quelle.inputBuffer.getChannelData(0);
     if (mitschnittFortsetzen) {
-      kanaldaten.push(new Float32Array(ton));
+      kanaldaten.push(ton);
       abtastRate = quelle.inputBuffer.sampleRate;
       aufnahmeLaenge += pufferGroesse;
     }
@@ -197,21 +197,29 @@ function steuerung(ton) {
 
 /*
 
- Der vorkonfigurierte 'dockerisierte' 
- Vosk-Server antwortet  
- auf einzelne Teile von Sprache nur mit 'Partial' 
- Transskriptionen, so lange diese ueber dieselbe 
- offene Websocket-Verbindung gesendet werden.
+ Der vorkonfigurierte 'dockerisierte' Vosk-Server 
+ antwortet auf einzelne Teile von Sprache nur mit 
+ 'partial' Transskriptionen. So lange Daten ueber 
+ dieselbe offene Websocket-Verbindung gesendet werden 
+ kommt nie ein abschliessender 'text' zurueck.
  
- Das kann geandert werden, wenn mit einer eigenen 
- und noetigenfalls ebenso containerisierten 
- Konfiguration der Server-Seite gearbeitet wird. 
-
  Um den Einsatz des momentan von Vosk erhaeltlichen 
  dockerisierten Servers zu zeigen wird in dieser 
- Demo stattdessen jeder Sendevorgang ueber 
- eine eigens eroeffnete WebSocket-Verbindung 
- geschickt.
+ Demo jeder Sendevorgang ueber eine eigens 
+ eroeffnete Websocket-Verbindung geschickt.
+
+ Eigentlich soll alles ueber dieselbe, offen 
+ bleibende Websocket laufen. Mit einer selbst 
+ aufgesetzten Servervariante von Vosk hat sich 
+ erwiesen, dass eine forlaufende simultane 
+ Spracherkennung ueber eine einzelne, offen 
+ bleibende Websocket funktioniert.
+ 
+ Einen eigenen Server aufzusetzen und zu beschreiben 
+ ueberschreitet aber den Rahmen dieser Demo und ist 
+ eher etwas fuer ein separates Demo-Projekt.
+
+ Deshalb bleibt es hier bei diesem Workaround.
 
  */
 function mitschnittSenden() {
@@ -259,8 +267,8 @@ function mitschnittSenden() {
 }
 
 /*
- * Aufnahmedaten in ein Array aus Fliesskommazahlen 
- * uebertragen
+ * das Array aus Aufnahmedaten in ein einzelnens Array 
+ * aus Fliesskommazahlen uebertragen
  */
 function zuFloat(kanalPuffer, aufnahmeLaenge) {
   var result = new Float32Array(aufnahmeLaenge);
